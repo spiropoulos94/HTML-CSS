@@ -1,3 +1,11 @@
+body {
+  box-sizing: border-box;
+}
+
+header , section {
+  text-align: center;
+}
+
 h1 {
   background: rgb(245, 234, 234);
   background: linear-gradient(
@@ -8,11 +16,24 @@ h1 {
   color: blue;
   border: 2px solid;
   display: inline-block;
-  animation-name: movement;
-  animation-duration: 1.5s;
 }
 
-section {
+ h2 {
+  animation:movement;
+  animation-duration:2s;
+  
+  
+}
+
+h3{
+  font-size:2em;
+  
+}
+
+#grid-flex {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   background: rgb(245, 234, 234);
   background: linear-gradient(
     173deg,
@@ -20,17 +41,23 @@ section {
     rgba(36, 111, 219, 0.6421919109440651) 100%
   );
   text-align: center;
-  animation-name: shake;
+  animation:shake;
   animation-duration: 2s;
+  
 }
 
 img {
-  max-width: 50%;
-  max-height: 40%;
+ width:100%;
+  height:auto;
 }
 
-li {
+
+
+.grid-item {
+  border:2px solid red;
   list-style-type: none;
+  text-align: center;
+  margin: 2% 2%;
   background: rgb(63, 94, 251);
   background: radial-gradient(
     circle,
@@ -39,89 +66,117 @@ li {
   );
 }
 
-h3 {
-  font-style: italic;
+.grid-item:first-child {
+  flex-basis: 100%;
 }
 
-@media (max-width: 450px) {
-  /* Settings for Mobile Viewports */
-
-  #grid-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-  }
-
-  li:nth-child(n + 2) {
-    margin-top: 5vh;
-    width: 30vw;
-    height: 50%;
-    position: relative;
-  }
-
-  .grid-item {
-    border: 2px solid blue;
-    background-color: white;
-  }
+.grid-item:nth-child(n+2) {
+  flex-basis:45%;
+  
+  
 }
 
-@media (min-width: 451px) {
-  /* Settings for Tablet Viewports */
 
-  #grid-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
+@media (min-width: 600px) {
+  
+  
+  .grid-item:nth-child(-n+2) {
+      flex-basis:45%;
   }
 
-  li:nth-child(n + 1) {
-    margin-top: 5vh;
-    width: 40vw;
-    position: relative;
-  }
 
-  li:nth-child(n + 3) {
-    margin-top: 5vh;
-    width: 25vw;
-    position: relative;
-  }
-
-  .grid-item {
-    border: 2px solid blue;
-    background-color: white;
-  }
 }
 
-@media (min-width: 1000px) {
-  /* Settings for Larger Viewports */
 
-  #grid-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-between;
+
+@media (min-width: 600px) {
+
+
+  .grid-flex {
+      justify-content: space-between;
+  }
+  
+  
+  .grid-item:nth-child(n+3) {
+      flex-basis:28%;
   }
 
-  li:nth-child(n-2) {
-    margin-top: 5vh;
-    width: 40vw;
-    height: 40vh;
-    position: relative;
-  }
 
-  li:nth-child(n + 2) {
-    margin-top: 5vh;
-    width: 20vw;
-    position: relative;
-  }
-
-  .grid-item {
-    border: 2px solid blue;
-    background-color: white;
-  }
 }
+
+
+
+@media (min-width:1000px) {
+
+  .grid-flex{
+      justify-content:space-between;
+  }
+
+  .grid-item:first-child {
+      
+      flex-basis:45%
+   
+  }
+
+  .grid-item:nth-child(n+2) {
+     
+      flex-basis:20%
+  }
+
+  
+}
+
+
+@media (min-width: 600px) {
+  
+  
+  .grid-item:nth-child(-n+2) {
+      flex-basis:45%;
+  }
+
+
+}
+
+
+
+@media (min-width: 600px) {
+
+
+  .grid-flex {
+      justify-content: space-between;
+  }
+  
+  
+  .grid-item:nth-child(n+3) {
+      flex-basis:28%;
+  }
+
+
+}
+
+
+
+@media (min-width:1000px) {
+
+  .grid-flex{
+      justify-content:space-between;
+  }
+
+  .grid-item:first-child {
+      
+      flex-basis:45%
+   
+  }
+
+  .grid-item:nth-child(n+2) {
+     
+      flex-basis:20%
+  }
+
+  
+}
+
+
 
 @keyframes shake {
   0% {
